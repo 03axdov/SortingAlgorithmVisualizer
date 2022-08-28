@@ -27,7 +27,7 @@ def main():
 
     while True:
         try:
-            delay = float(input("Specify the delay between calculation (0.01 <= delay): "))
+            delay = float(input("Specify the delay between calculation (0.01 <= delay or delay = 0): "))
             break
         except ValueError:
             print("")
@@ -37,7 +37,7 @@ def main():
     li = np.random.randint(0, max + 1, length)
     x = np.arange(0, length, 1)
 
-    algorithms = {'1': ['Bubble Sort', bubble_sort]}
+    algorithms = {'1': ['Bubble Sort', bubble_sort], '2': ['Insertion Sort', insertion_sort]}
     print('')
     print("Sorting algorithms: ")
     for key, values in algorithms.items():
