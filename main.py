@@ -37,7 +37,8 @@ def main():
     li = np.random.randint(0, max + 1, length)
     x = np.arange(0, length, 1)
 
-    algorithms = {'1': ['Bubble Sort', bubble_sort], '2': ['Insertion Sort', insertion_sort], '3': ['Quicksort', quicksort]}
+    algorithms = {'1': ['Bubble Sort', bubble_sort], '2': ['Insertion Sort', insertion_sort], '3': ['Quicksort', quicksort],
+                  '4': ['Bogo Sort', bogo_sort]}
     print('')
     print("Sorting algorithms: ")
     for key, values in algorithms.items():
@@ -48,7 +49,7 @@ def main():
             break
         except KeyError:
             print("")
-            print("ERROR: Please enter a valid value")
+            print("ERROR: Please enter a valid integer")
             print("")
 
     algorithm[1](li, x, delay)

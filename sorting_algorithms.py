@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from random import randint
+from random import randint, shuffle
 
 def bubble_sort(li, x, delay):
     n = len(li)
@@ -84,3 +84,22 @@ def quicksort(li, x, delay, number_of_operations=0, type=""):
         plt.title(f"Number of operations: {number_of_operations} - Pivot: Red")
         plt.show()
     return result
+
+def bogo_sort(li, x, delay, number_of_operations=0):
+    def is_sorted(li):
+        for i in range(0, len(li) - 1):
+            if li[i] > li[i+1]:
+                return False
+        return True
+    
+    while not is_sorted(li):
+        plt.bar(x, li, color=(0.2, 0.4, 0.6, 0.6))
+        plt.title(f"Number of operations: {number_of_operations}")
+        number_of_operations += 1
+        plt.pause(delay)
+        plt.clf()
+        shuffle(li)
+
+    plt.bar(x, li, color=(0.2, 0.4, 0.6, 0.6))
+    plt.title(f"Number of operations: {number_of_operations}")
+    plt.show()
